@@ -1,0 +1,57 @@
+<html>
+
+<head>
+
+<title>JS Validation for other types of form input fields</title>
+
+<script type="text/javascript">
+
+  function submitClick( ) //function shows message after submitting information
+
+  {
+
+  alert("Thank you for your time! Your details have been submitted!");
+
+  }
+
+
+  function formValidation ( )
+
+  {
+
+  flag = true;
+
+  
+  
+  // Validate emails
+ if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)* (\.\w{2,3})+$/.test(myForm.user_email.value))  //Regular expressions to validate email
+
+ {
+
+ alert("Enter Valid Email Address!");
+
+ flag = false;
+
+ }
+
+ 
+ return flag;
+
+ }
+
+ </script>
+
+ </head>
+
+ <body >
+
+ <form name="myForm" method="post" onSubmit=" return formValidation( );">
+
+ <p>Email: <input type="text" name="user_email"></p>
+
+<p><input type="submit" name="send" value="Submit Details" onClick="submitClick( )"></p>
+
+</form>
+
+</body>
+</html>
